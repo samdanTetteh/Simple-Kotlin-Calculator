@@ -1,6 +1,6 @@
 import java.lang.IllegalArgumentException
 
-fun main(){
+fun main(vararg args: String){
 
     println("Please enter your math problem...")
     var calInput = readLine()
