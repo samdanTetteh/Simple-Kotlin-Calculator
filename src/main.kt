@@ -10,15 +10,16 @@ fun main(vararg args: String){
         // Convert user input into array to grab specific values
         val operation= calInput.split(' ')
 
-        // Get Arithmetic operation
-        val operator  = operation[1]
-
-        // get operation values and make sure Math operations can be done on them
-        val LHS = operation[0].toDoubleOrNull() ?: throw IllegalArgumentException("Invalid input: ${operation[0]}")
-        val RHS = operation[2].toDoubleOrNull() ?: throw IllegalArgumentException("Invalid input: ${operation[2]}")
-
         // Make sure is a valid Math problem
         if (operation.size == 3) {
+
+            // Get Arithmetic operation
+            val operator  = operation[1]
+
+            // get operation values and make sure Math operations can be done on them
+            val LHS = operation[0].toDoubleOrNull() ?: throw IllegalArgumentException("Invalid input: ${operation[0]}")
+            val RHS = operation[2].toDoubleOrNull() ?: throw IllegalArgumentException("Invalid input: ${operation[2]}")
+
            val result =  when (operator) {
                 "+" -> LHS.plus(RHS)
                 "-" -> LHS.minus(RHS)
@@ -32,6 +33,8 @@ fun main(vararg args: String){
             println("Invalid operation specified: $operation")
         }
 
+
+        calInput = readLine()
     }
 
     // Program exited
